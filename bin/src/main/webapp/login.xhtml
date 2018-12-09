@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+          <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <title>Stok Takip</title>
+    </h:head>
+    <h:body>
+                <h2 style="text-align: center">X ŞİRKETİ YÖNETİM PANELİ</h2>
+        <h:outputLabel value="X kullanıcısı hoş geldiniz"> </h:outputLabel>       
+        <br>
+        </br>
+        <hr></hr>
+               <div id="menudiv">
+                   <h:commandButton  value="Ürün/Depo İşlemleri" style="margin-bottom: 25px; width: 150px" />
+                   <br></br>
+               <h:commandButton  style="margin-bottom: 25px;width: 150px" value="Kullanıcı İşlemleri" />
+
+            </div>
+        <div id="#menudiv">
+        <h4>STOKTAKİ ÜRÜNLER</h4>
+        <!-- Buraya databaseden gelen ürünler listelenecek!-->
+        <f:view>
+            <h:form>
+                <h:dataTable >
+                </h:dataTable>
+            </h:form>
+       
+        </f:view>
+ <!-- Üstte databaseden gelen ürünler listelenecek!-->
+        
+        <br></br>
+        
+       <h:inputText autocomplete="on">
+            <f:passThroughAttribute name="placeHolder" value="Search">
+            </f:passThroughAttribute>
+        </h:inputText>
+        <h:commandButton value="Ürün ara"></h:commandButton>
+        </div>
+    </h:body>
+</html>
+
