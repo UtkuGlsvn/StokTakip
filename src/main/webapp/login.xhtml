@@ -6,23 +6,27 @@
        xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-          <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>Stok Takip</title>
     </h:head>
-    <h:body>
-                <h2 style="text-align: center">ŞİRKET YÖNETİM PANELİ</h2>
-        <h:outputLabel value="#{index.username} kullanıcısı hoş geldiniz"> </h:outputLabel>       
-        <br>
-        </br>
-        <hr></hr>
-               <div id="menudiv">
-                   <h:commandButton  value="Ürün/Depo İşlemleri" style="margin-bottom: 25px; width: 150px" />
-                   <br></br>
-               <h:commandButton  style="margin-bottom: 25px;width: 150px" value="Kullanıcı İşlemleri" />
+       <h:body>
 
-            </div>
-        <div id="#menudiv">
-        <h4>STOKTAKİ ÜRÜNLER</h4>
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="120" resizable="true" closable="true" collapsible="true">
+                    <h2 style="text-align: center">ŞİRKET YÖNETİM PANELİ</h2>
+                    <h:outputLabel value="#{index.username} kullanıcısı hoş geldiniz"> </h:outputLabel> 
+                </p:layoutUnit>
+                <p:layoutUnit position="west" size="175">
+                    <p:menu>
+                        <p:submenu label="İşlemler">
+                            <p:menuitem value="Ürün işlemleri" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                            <p:menuitem value="Kullanıcı işlemleri" url="http://www.primefaces.org/documentation.html" />
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+                <p:layoutUnit position="center">
+<h4>STOKTAKİ ÜRÜNLER</h4>
         <!-- Buraya databaseden gelen ürünler listelenecek!-->
         <f:view>
             <h:form>
@@ -39,8 +43,10 @@
             <f:passThroughAttribute name="placeHolder" value="Search">
             </f:passThroughAttribute>
         </h:inputText>
-        <h:commandButton value="Ürün ara"></h:commandButton>
-        </div>
-    </h:body>
+        <h:commandButton value="Ürün ara"></h:commandButton>                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
 </html>
 
