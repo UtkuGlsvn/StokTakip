@@ -26,6 +26,6 @@ public class indexBean {
 
 	public String login()
 	{
-	      return "login";
+           return "login?faces-redirect=true";
 	}
 }

@@ -8,19 +8,21 @@
     <h:head>
         <title>Stok Takip</title>
     </h:head>
-    <h:body>
-        <h2 style="text-align: center">X ŞİRKETİ YÖNETİM PANELİ</h2>
-        <br />
-        <f:view>
-            <h:form>
-                Kullanıcı Adı:<h:inputText value="#{index.username}"></h:inputText>
-                <br></br>
-                Şifre:<h:inputSecret value="#{index.password}"></h:inputSecret>
-                <br></br>
-                <h:commandButton value="Giriş" action="#{index.login}"></h:commandButton>
-            </h:form>
-        </f:view>
-
-          </h:body>
+<h:body>  
+         <h:form>
+         
+            <h:panelGrid columns="2">
+                <h:outputText value="Kullanıcı Adı:"/>
+                <h:inputText  required="true" size="15" requiredMessage="Kullanıcı adı boş geçilemez"/>
+                 <h:outputText value="Kullanıcı Şifre:"/>
+                 <h:inputSecret size="15" required="true" requiredMessage="Şifre boş geçilemez"/>
+                 </h:panelGrid>
+         <h:panelGrid columns="2">
+             <h:commandButton value="Giriş yap" action="#{index.login}"></h:commandButton>
+                  <h:message for = "giris" style = "color:red" />   
+         </h:panelGrid> 
+       <h:messages style = "color:red;margin:8px;" />   
+</h:form>
+</h:body>
 </html>
 
