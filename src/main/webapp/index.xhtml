@@ -9,11 +9,12 @@
         <title>Stok Takip</title>
     </h:head>
 <h:body>  
+    <h2 style="text-align: center"> STOK TAKİP PANELİ</h2>
          <h:form>
          
             <h:panelGrid columns="2">
                 <h:outputText value="Kullanıcı Adı:"/>
-                <h:inputText  required="true" size="15" requiredMessage="Kullanıcı adı boş geçilemez"/>
+                <h:inputText  required="true" size="15" requiredMessage="Kullanıcı adı boş geçilemez" value="#{index.username}"/>
                  <h:outputText value="Kullanıcı Şifre:"/>
                  <h:inputSecret size="15" required="true" requiredMessage="Şifre boş geçilemez"/>
                  </h:panelGrid>

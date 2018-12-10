@@ -14,13 +14,15 @@
 
                 <p:layoutUnit position="north" size="120" resizable="true" closable="true" collapsible="true">
                     <h2 style="text-align: center">ŞİRKET YÖNETİM PANELİ</h2>
-                    <h:outputLabel value="#{index.username} kullanıcısı hoş geldiniz"> </h:outputLabel> 
+                    <h:outputLabel value="#{username} kullanıcısı hoş geldiniz"> </h:outputLabel> 
                 </p:layoutUnit>
                 <p:layoutUnit position="west" size="175">
                     <p:menu>
                         <p:submenu label="İşlemler">
-                            <p:menuitem value="Ürün işlemleri" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
-                            <p:menuitem value="Kullanıcı işlemleri" url="http://www.primefaces.org/documentation.html" />
+                         <p:menuitem value="Ana menü"  url="#{login.Dirige(0)}" />
+                          <p:menuitem value="Ürün işlemleri"  url="#{login.Dirige(1)}" />
+                            <p:menuitem value="Kullanıcı işlemleri"  url="#{login.Dirige(2)}" />
+                             <p:menuitem value="Çıkış"  url="#{login.Dirige(3)}" />
                         </p:submenu>
 
                     </p:menu>
@@ -43,7 +45,8 @@
             <f:passThroughAttribute name="placeHolder" value="Search">
             </f:passThroughAttribute>
         </h:inputText>
-        <h:commandButton value="Ürün ara"></h:commandButton>                </p:layoutUnit>
+        <h:commandButton value="Ürün ara"></h:commandButton>                
+         </p:layoutUnit>
 
             </p:layout>
 

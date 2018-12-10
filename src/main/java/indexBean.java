@@ -1,5 +1,6 @@
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean(name = "index", eager = true)
 @RequestScoped
@@ -26,6 +27,8 @@ public class indexBean {
 
 	public String login()
 	{
+           FacesContext context = FacesContext.getCurrentInstance();
+           context.getExternalContext().getSessionMap().put("username", username);
            return "login?faces-redirect=true";
 	}
 }
