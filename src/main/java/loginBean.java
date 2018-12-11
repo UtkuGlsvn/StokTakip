@@ -31,4 +31,23 @@ public class loginBean {
        return null;
       }
    }
+   public String urunEkle()
+   {
+         return "urunEkle.xhtml";
+   }
+      
+   public String urunSil()
+   {
+         return "urunSil.xhtml";
+   }
+      
+   public String kullaniciEkle()
+   {
+         return "kullaniciEkle.xhtml";
+   }
+      
+   public String kullaniciSil()
+   {
+         return "kullaniciSil.xhtml";
+   }
 }

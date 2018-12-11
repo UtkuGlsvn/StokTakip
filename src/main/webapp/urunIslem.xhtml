@@ -46,10 +46,10 @@
             <f:passThroughAttribute name="placeHolder" value="Search">
             </f:passThroughAttribute>
         </h:inputText>
-        <h:commandButton value="Ürün ara"></h:commandButton>
+        <p:commandButton value="Ürün ara" style="margin-left: 10px"></p:commandButton>
         <br></br>
-            <h:commandButton value="Ürün Ekle/Güncelle"></h:commandButton>
-            <h:commandButton value="Ürün Sil"></h:commandButton>
+        <p:commandButton value="Ürün Ekle/Güncelle" action="#{login.urunEkle()}" process="@this" />
+        <p:commandButton value="Ürün Ekle/Güncelle" action="#{login.urunSil()}" process="@this" />
 
                 </p:layoutUnit>
 
