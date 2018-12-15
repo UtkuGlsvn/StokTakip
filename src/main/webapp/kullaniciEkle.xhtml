@@ -28,11 +28,15 @@
                 <p:layoutUnit position="center">
  		<h4>Kullanıcı Paneli</h4> 
  		<h:panelGrid columns="2" border="1">
- 		<h:outputLabel value="Kullanıcı adı:"></h:outputLabel>
+                <h:outputLabel value="Ad:"></h:outputLabel>
  		<h:inputText> </h:inputText>
- 		<h:outputLabel value="Kullanıcı şifre:"></h:outputLabel>
+                <h:outputLabel value="Soyad:"></h:outputLabel>
  		<h:inputText> </h:inputText>
- 		<h:outputLabel value="Kullanıcı yetki:"></h:outputLabel>
+ 		<h:outputLabel value="Kullanıcı Adı:"></h:outputLabel>
+ 		<h:inputText> </h:inputText>
+ 		<h:outputLabel value="Kullanıcı Şifre:"></h:outputLabel>
+ 		<h:inputText> </h:inputText>
+ 		<h:outputLabel value="Kullanıcı Yetki:"></h:outputLabel>
  				<h:selectOneMenu id="selectManyListbox"
 			required="#{showcaseModelBean.selectedComponent.required}"
 			value="#{selectManyModelBean.favoriteIds}">
@@ -44,7 +48,7 @@
 			<f:selectItem itemLabel="Open Source" itemValue="5" />
 		</h:selectOneMenu>
  		 </h:panelGrid>
- 		 <h:commandButton value="İşlemi tamamla"></h:commandButton>                
+ 		 <h:commandButton value="İşlemi Tamamla"></h:commandButton>                
          </p:layoutUnit>
             </p:layout>
         </h:body>
