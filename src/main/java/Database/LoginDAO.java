@@ -27,17 +27,13 @@ public class LoginDAO {
 			System.out.println(ps.toString());
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				System.out.println("oh yes");
-				System.out.println(rs.getString("username"));
+				System.out.println("logindao succesful");
 				return true;
 			}
 			else
 			{
-				System.out.println("sex");
+				System.out.println("logindao fail");
 			}
-			 rs.close();
-		       ps.close();
-		       conn.close();
 		} catch (Exception ex) {
 			ex.fillInStackTrace();
 			System.out.println("Error:" + ex.toString());

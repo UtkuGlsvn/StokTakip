@@ -19,7 +19,7 @@
                  <h:inputSecret size="15" required="true" requiredMessage="Şifre boş geçilemez" value="#{index.password}"/>
                  </h:panelGrid>
          <h:panelGrid columns="2">
-             <h:commandButton value="Giriş yap" action="#{index.login}"></h:commandButton>
+             <h:commandButton value="Giriş yap" action="#{index.validateUsernamePassword}"></h:commandButton>
                   <h:message for = "giris" style = "color:red" />   
          </h:panelGrid> 
        <h:messages style = "color:red;margin:8px;" />   
