@@ -14,11 +14,14 @@ import java.sql.PreparedStatement;
  * @author Glsvn
  */
 public class DatabaseConnect {
+	String url="jdbc:oracle:thin:admin@//localhost:49161/xe";
+	String username="admin";
+	String password="admin";
    public Connection DatabaseConnect()
     {
         try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:43169/cardb", "Stoktakip", "admin");
+			Connection con = DriverManager.getConnection(url,username,password);
+			System.out.println("baglandi");
 			return con;
 		} catch (Exception ex) {
 			System.out.println("Database not connect error:"+ ex.getMessage());
