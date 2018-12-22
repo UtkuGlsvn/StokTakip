@@ -15,27 +15,35 @@ import java.sql.SQLException;
  * @author Glsvn
  */
 public class LoginDAO {
-   static DatabaseConnect con=null;
-    public static boolean Control(String user, String password) {
-		PreparedStatement ps = null;
+ 
+    public boolean Control(String user, String password,DatabaseConnect con) {
+    	
+		PreparedStatement ps;
+		Connection conn = con.DatabaseConnect();
 		try {
-			con = new DatabaseConnect();
-			ps = con.prepareStatement("Select k_ad, sifre from Kullanici where k_ad = ? and sifre = ?");
+			ps = conn.prepareStatement("Select username,password from admin.KULLANICI  where username = ? and password = ? ");
 			ps.setString(1, user);
 			ps.setString(2, password);
-
+			System.out.println(ps.toString());
 			ResultSet rs = ps.executeQuery();
-
 			if (rs.next()) {
+				System.out.println("oh yes");
+				System.out.println(rs.getString("username"));
 				return true;
 			}
-		} catch (SQLException ex) {
-			System.out.println("Error:" + ex.getMessage());
-			return false;
-		} finally {
-			con.close((Connection) con);
-                        return false;
-		}
-		
+			else
+			{
+				System.out.println("sex");
+			}
+			 rs.close();
+		       ps.close();
+		       conn.close();
+		} catch (Exception ex) {
+			ex.fillInStackTrace();
+			System.out.println("Error:" + ex.toString());
+			
+			} 
+		return false;
+
 	}
 }

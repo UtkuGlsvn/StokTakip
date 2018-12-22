@@ -16,7 +16,7 @@
                 <h:outputText value="Kullanıcı Adı:"/>
                 <h:inputText  required="true" size="15" requiredMessage="Kullanıcı adı boş geçilemez" value="#{index.username}"/>
                  <h:outputText value="Kullanıcı Şifre:"/>
-                 <h:inputSecret size="15" required="true" requiredMessage="Şifre boş geçilemez"/>
+                 <h:inputSecret size="15" required="true" requiredMessage="Şifre boş geçilemez" value="#{index.password}"/>
                  </h:panelGrid>
          <h:panelGrid columns="2">
              <h:commandButton value="Giriş yap" action="#{index.login}"></h:commandButton>

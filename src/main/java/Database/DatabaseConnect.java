@@ -21,7 +21,7 @@ public class DatabaseConnect {
     {
         try {
 			Connection con = DriverManager.getConnection(url,username,password);
-			System.out.println("baglandi");
+			System.out.println("Connected");
 			return con;
 		} catch (Exception ex) {
 			System.out.println("Database not connect error:"+ ex.getMessage());
@@ -31,8 +31,10 @@ public class DatabaseConnect {
 
 	public static void close(Connection con) {
 		try {
+			System.out.println("Closed");
 			con.close();
 		} catch (Exception ex) {
+			System.out.println("Database close error:"+ ex.getMessage());
                     
 		}
 	}
