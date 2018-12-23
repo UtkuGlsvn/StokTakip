@@ -7,6 +7,7 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Stok Takip</title>
+       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>     
     </h:head>
        <h:body>
 
@@ -18,39 +19,66 @@
                 </p:layoutUnit>
                 <p:layoutUnit position="west" size="175">
                     <p:menu>
-                        <p:submenu label="İşlemler">
+                      <p:submenu label="İşlemler">
                          <p:menuitem value="Ana menü"  url="#{login.Dirige(0)}" />
                           <p:menuitem value="Ürün işlemleri"  url="#{login.Dirige(1)}" />
                             <p:menuitem value="Kullanıcı işlemleri"  url="#{login.Dirige(2)}" />
                              <p:menuitem value="Çıkış"  url="#{login.Dirige(3)}" />
-
                         </p:submenu>
 
                     </p:menu>
                 </p:layoutUnit>
                 <p:layoutUnit position="center">
-<h4>STOKTAKİ ÜRÜNLER</h4>
-        <!-- Buraya databaseden gelen ürünler listelenecek!-->
-        <f:view>
-            <h:form>
-                <h:dataTable >
-                </h:dataTable>
-            </h:form>
-       
-        </f:view>
- <!-- Üstte databaseden gelen ürünler listelenecek!-->
-        
-        <br></br>
-        
+<h4>URUNLER</h4>
+       <h:form id="userForm">
+        <h:dataTable id="productTable" binding="#{table}" value="#{urunbean.urunList}"  var="product" class="table table-striped table-hover table-bordered tableUpdated">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                <h:outputText value="#{table.rowIndex + 1}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Urun Adi</f:facet>
+                <h:outputText value="#{product.urun_ad}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Barkod No</f:facet>
+                <h:outputText value="#{product.barkod_no}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Uretim Tarihi</f:facet>
+                <h:outputText value="#{product.u_tarihi}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Son Kullanma Tarihi</f:facet>
+                <h:outputText value="#{product.s_tarihi}" />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">Fiyat</f:facet>
+                <h:outputText value="#{product.fiyat}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Depo</f:facet>
+                <h:outputText value="#{product.depo_id}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Güncelle</f:facet>
+                <h:commandButton value="Güncelle" class="btn btn-primary" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Sil</f:facet>
+                <h:commandButton  value="Sil" class="btn btn-danger" />
+            </h:column>
+        </h:dataTable>
+        <center>
+            <h:commandButton value="Urun Ekle" class="btn btn-success btnSpace" />
+        </center>
+    </h:form>
        <h:inputText autocomplete="on">
             <f:passThroughAttribute name="placeHolder" value="Search">
             </f:passThroughAttribute>
         </h:inputText>
-        <p:commandButton value="Ürün ara" style="margin-left: 10px"></p:commandButton>
-        <br></br>
-        <p:commandButton value="Ürün Ekle/Güncelle" action="#{login.urunEkle()}" process="@this" />
-        <p:commandButton value="Ürün Ekle/Güncelle" action="#{login.urunSil()}" process="@this" />
-
+            <h:commandButton value="Urun Ara" class="btn btn-success btnSpace" />
                 </p:layoutUnit>
 
             </p:layout>

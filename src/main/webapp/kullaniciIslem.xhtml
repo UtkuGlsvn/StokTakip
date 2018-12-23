@@ -31,54 +31,49 @@
                 <p:layoutUnit position="center">
 <h4>KULLANICILAR</h4>
        <h:form id="userForm">
-        <h:dataTable id="userTable" binding="#{table}" value="#{userbean.userList}" class="table table-striped table-hover table-bordered tableUpdated">
+        <h:dataTable id="userTable" binding="#{table}" value="#{userbean.userList}"  var="user" class="table table-striped table-hover table-bordered tableUpdated">
             <h:column>
                 <f:facet name="header">Id</f:facet>
-                <h:outputText/>
+                <h:outputText value="#{table.rowIndex + 1}"/>
             </h:column>
             <h:column>
-                <f:facet name="header">Student Name</f:facet>
-                <h:outputText />
+                <f:facet name="header">Ad</f:facet>
+                <h:outputText value="#{user.ad}" />
             </h:column>
             <h:column>
-                <f:facet name="header">Email Address</f:facet>
-                <h:outputText />
+                <f:facet name="header">Soyad</f:facet>
+                <h:outputText value="#{user.soyad}" />
             </h:column>
             <h:column>
-                <f:facet name="header">Password</f:facet>
-                <h:outputText />
+                <f:facet name="header">Kullanıcı adı</f:facet>
+                <h:outputText value="#{user.username}" />
             </h:column>
             <h:column>
-                <f:facet name="header">Gender</f:facet>
-                <h:outputText  />
+                <f:facet name="header">Şifre</f:facet>
+                <h:outputText value="#{user.password}" />
             </h:column>
             <h:column>
-                <f:facet name="header">Address</f:facet>
-                <h:outputText />
+                <f:facet name="header">Yetki</f:facet>
+                <h:outputText value="#{user.yetki_id}" />
             </h:column>
             <h:column>
-                <f:facet name="header">Update</f:facet>
-                <h:commandButton value="Update" class="btn btn-primary" />
+                <f:facet name="header">Güncelle</f:facet>
+                <h:commandButton value="Güncelle" class="btn btn-primary" />
             </h:column>
             <h:column>
-                <f:facet name="header">Delete</f:facet>
-                <h:commandButton  value="Delete" class="btn btn-danger" />
+                <f:facet name="header">Sil</f:facet>
+                <h:commandButton  value="Sil" class="btn btn-danger" />
             </h:column>
         </h:dataTable>
         <center>
-            <h:commandButton value="Create New User" class="btn btn-success btnSpace" />
+            <h:commandButton value="Kullanıcı Ekle" class="btn btn-success btnSpace" />
         </center>
     </h:form>
        <h:inputText autocomplete="on">
             <f:passThroughAttribute name="placeHolder" value="Search">
             </f:passThroughAttribute>
         </h:inputText>
-        <p:commandButton value="Kullanıcı ara" style="margin-left: 10px"></p:commandButton>
-  
-        <br></br>
-        <p:commandButton value="Kullanıcı Ekle/Güncelle" action="#{login.kullaniciEkle()}" process="@this" />
-        <p:commandButton value="Kullanıcı Ekle/Güncelle" action="#{login.kullaniciSil()}" process="@this" />
-
+            <h:commandButton value="Kullanıcı Ara" class="btn btn-success btnSpace" />
                 </p:layoutUnit>
 
             </p:layout>
