@@ -1,3 +1,5 @@
+package Bean;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -31,22 +33,6 @@ public class indexBean {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String login()
-	{	
-	Boolean a;
-	login=new LoginDAO();
-	conn = new DatabaseConnect();
-	a =	login.Control(username, password,conn);
-	if(a)
-	{
-
-        FacesContext context = FacesContext.getCurrentInstance();
-        context.getExternalContext().getSessionMap().put("username", username);
-        return "login?faces-redirect=true";	
-	}
-	return null;
 	}
 	
 	
