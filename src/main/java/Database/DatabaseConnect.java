@@ -8,6 +8,7 @@ package Database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.util.Properties;
 
 /**
  *
@@ -20,7 +21,8 @@ public class DatabaseConnect {
    public Connection DatabaseConnect()
     {
         try {
-			Connection con = DriverManager.getConnection(url,username,password);
+            Class.forName("oracle.jdbc.OracleDriver");
+            Connection con = DriverManager.getConnection(url,username,password);
 			System.out.println("Connected");
 			return con;
 		} catch (Exception ex) {

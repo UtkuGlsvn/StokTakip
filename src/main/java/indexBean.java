@@ -14,8 +14,8 @@ import Database.LoginDAO;
 public class indexBean {
 	private String username;
 	private String password;
-	DatabaseConnect conn;
-	LoginDAO login;
+	DatabaseConnect conn = new DatabaseConnect();
+	LoginDAO login = new LoginDAO();
 	public String getUsername() {
 		return username;
 	}
@@ -51,8 +51,6 @@ public class indexBean {
 	
 	
 	public String validateUsernamePassword() {
-		conn = new DatabaseConnect();
-		login=new LoginDAO();
 		boolean valid = login.Control(username, password, conn);
 		if (valid) {
 			HttpSession session = SessionUtils.getSession();
@@ -64,7 +62,7 @@ public class indexBean {
 					new FacesMessage(FacesMessage.SEVERITY_WARN,
 							"Sifre veya kullanıcı adınız yanlış!",
 							"Lütfen doğru kullanıcı adı ve şifreyi giriniz."));
-			return "login";
+			return null;
 		}
 	}
 
